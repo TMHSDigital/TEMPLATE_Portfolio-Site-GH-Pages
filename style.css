@@ -1,1 +1,273 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Section Styles */
+.section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.section p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Home Section */
+#home {
+    background: url('background.jpg') no-repeat center center/cover;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#home .intro h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+#home .intro p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#home .btn {
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+#home .btn:hover {
+    background-color: #0056b3;
+}
+
+/* About Section */
+#about {
+    background-color: #fff;
+    color: #333;
+}
+
+#about .container {
+    max-width: 1000px;
+    margin: auto;
+    text-align: left;
+}
+
+/* Portfolio Section */
+#portfolio .container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+#portfolio .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.portfolio-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-info {
+    opacity: 1;
+}
+
+.portfolio-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #007bff;
+    color: #fff;
+}
+
+#contact .container {
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact form input, 
+#contact form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contact form button {
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact form button:hover {
+    background-color: #003d82;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Fade-In Animation */
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #home .intro h1 {
+        font-size: 2.5rem;
+    }
+
+    #home .intro p {
+        font-size: 1.2rem;
+    }
+
+    #home .btn {
+        font-size: 1rem;
+    }
+
+    #portfolio .grid {
+        grid-template-columns: 1fr;
+    }
+}
 
